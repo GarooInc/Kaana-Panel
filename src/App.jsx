@@ -95,32 +95,34 @@ function App() {
                         </div>
                       )
                 }
-                <div className="items">
                 {
                   show && order.items && selectedOrder === index && (
-                    order.items.map((item, index) => (
-                      <div key={index} className="items_container">
-                        <div className="text-aqua p-4">{item.itemName}</div>
-                          <span className='text-aqua font-bold'>${item.price} QTY: {item.quantity}</span>
-                          {
-                            item.variant && (
-                              <div className="text_item">Variant: {item.variant}</div>
-                            )
-                          }
-                          {
-                            item.extras && <div className="text_item font-bold">Extras</div>
-                          }
-                          {
-                            item.extras && item.extras.map((extra, index) => (
-                              <div key={index} className="text_item">{extra.extraName}: {extra.price}</div>
-                            ))
-                          }
-                      </div>
-                      ))
+                    <div className="items">
+                    {
+                      order.items.map((item, index) => (
+                        <div key={index} className="items_container">
+                          <div className="text_item_display">{item.itemName}</div>
+                            <span className='text_item_display font-bold'>${item.price} QTY: {item.quantity}</span>
+                            {
+                              item.variant && (
+                                <div className="text_item_display">Variant: {item.variant}</div>
+                              )
+                            }
+                            {
+                              item.extras && <div className="text_item_display font-bold">Extras</div>
+                            }
+                            {
+                              item.extras && item.extras.map((extra, index) => (
+                                <div key={index} className="text_item_display">{extra.extraName}: {extra.price}</div>
+                              ))
+                            }
+                        </div>
+                        ))
+                    }
+                    </div>
                   )
                   
                 }
-                </div>
                 </div>
                 {
                   order.status && (

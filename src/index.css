@@ -31,11 +31,15 @@
   @apply text-secondary w-1/5 text-center font-medium text-sm;
 }
 
+.text_item_display{
+  @apply text-quaternary text-center font-medium text-sm;
+}
+
 .items_container{
-  @apply flex justify-between flex-col border-b-2 border-tertiary;
+  @apply flex justify-between flex-col border-b-2 border-tertiary p-4;
 }
 
 .items{
-  @apply absolute -bottom-40 bg-white h-40 z-10 rounded-md font-medium overflow-y-auto;
+  @apply absolute -bottom-40 bg-white h-40 z-10 rounded-md font-medium overflow-y-auto w-60;
 }
 
